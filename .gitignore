@@ -1,0 +1,3 @@
+mastodon/
+# Ignore the env files in the repo
+.env/
