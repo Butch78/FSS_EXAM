@@ -1,0 +1,30 @@
+# run inside \mastodon\app
+git ls-files | awk -F . '{print $NF}' | sort | uniq -c | sort -n -r | awk '{print $2,$1}' | head -10
+rb 895
+js 437
+haml 214
+json 178
+png 37
+erb 33
+scss 32
+svg 24
+woff2 5
+woff 5
+
+# ls-files iterates through each line
+# awk -F --> sepeartor -f-->reads from file not first line argument
+# print $NF --> counts number of fields within current input record
+# print $2$1 --> print second column first, then first column
+
+
+find . -type f -name "*.rb" | awk -F / '{print $(NF)}' > mastodon_../rubyfiles.txt
+# find names of ruby files and store them in a listcat
+
+
+#week 8 slide 19
+git log --numstat --since "Jan 1 2019" --until "DEC 31 2019" > ../commits2019.txt --> writes 
+git log --numstat -n 1 cfd49dd646c0e13fa54645ff27a5c59c1f96dc8b
+cat logs.log | grep ".java" | awk -F '\t' '{print $3}' | sort | uniq –c
+
+# Commits in a repo
+git rev-list --all --count
